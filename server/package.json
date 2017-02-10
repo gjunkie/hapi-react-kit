@@ -1,0 +1,32 @@
+{
+  "name": "hapi-react-kit-server",
+  "version": "0.0.1",
+  "description": "A simple starter kit for a hapijs and react app.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node ./src/server.js",
+    "build": "babel src -d lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/gjunkie/hapi-react-kit.git"
+  },
+  "keywords": [
+    "hapijs",
+    "react"
+  ],
+  "author": "Freddie Carthy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gjunkie/hapi-react-kit/issues"
+  },
+  "homepage": "https://github.com/gjunkie/hapi-react-kit#readme",
+  "dependencies": {
+    "bell": "^8.5.0",
+    "hapi": "^16.1.0",
+    "hapi-auth-cookie": "^6.1.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.22.2"
+  }
+}
