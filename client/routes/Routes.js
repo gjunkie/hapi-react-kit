@@ -3,15 +3,14 @@ import React from 'react'
 import { render } from 'react-dom'
 import { Router } from 'react-router'
 
-import PageRoutes from './PageRoutes'                       
+import PageRoutes from './PageRoutes'
 
 const routeConfig = [
   PageRoutes
 ]
 
 export const AppRouter = <Router
-  routes={routeConfig}
-  onUpdate={handleUpdate} />
+  routes={routeConfig} />
 
 class Routes {
   constructor() {
@@ -19,10 +18,9 @@ class Routes {
     // for the case where someone already logged in and refreshes the page or
     // opens another tab.                                   
     //getSession()
-  } 
+  }
 
   run(content) {
-    console.log('tset')
     return render(AppRouter, content)
     //return getSession()
       //.then(() => {

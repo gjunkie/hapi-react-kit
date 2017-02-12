@@ -1,29 +1,14 @@
-//import App from 'components/App'                            
-//import Pieces from 'components/Piece/Pieces'                
+import App from '../components/App'
+import Home from '../components/Home'
 
 //import { requireAuth } from './RoutingUtils'
-// import Upload from 'components/Piece/Upload'             
-
 
 const PageRoutes = {                                       
-  path: '/',                                                
-  //component: App,                                           
-  //indexRoute: {                                             
-    //component: Pieces,                                      
-    //onEnter: requireAuth('/login')                          
-  //},
-  childRoutes: [                                            
-    // {
-    //   path: 'upload',                                    
-    //   component: Upload,                                 
-    //   onEnter: requireAuth('/login')                     
-    // },
-    {
-      //path: 'pieces',                                       
-      //component: Pieces,                                    
-      //onEnter: requireAuth('/login')                        
-    }
-  ]
+  path: '/',
+  component: App,
+  childRoutes: {
+    component: Home,
+  },
 }
 
 export default PageRoutes
