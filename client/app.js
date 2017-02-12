@@ -1,17 +1,23 @@
-import Routes from './routes/Routes'
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-//require('normalize.css')
-//require('styles/main.scss')
+import { AppContainer } from 'react-hot-loader';
 
-function run() {
-  Routes.run(document.getElementById('content'))
-}
+import Routes from './routes/Routes';
+
+const render = (Component) => {
+  ReactDOM.render(
+    <AppContainer>
+      <Component/>
+    </AppContainer>,
+    document.getElementById('root')
+  );
+};
+
+render(Routes);
 
 if (module.hot) {
-  module.hot.accept('routes/Routes', () => {
-    const RoutesNew = require('routes/Routes');
-    RoutesNew.run(document.getElementById('content'))
-  })
+  module.hot.accept('./routes/Routes', () => {
+    render(Routes)
+  });
 }
-
-run()

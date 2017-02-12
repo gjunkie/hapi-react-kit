@@ -1,12 +1,12 @@
 import React from 'react'
-import { getSession } from '../actions/UserActions'
+//import { getSession } from '../actions/UserActions'
 import { render } from 'react-dom'
 import { Router } from 'react-router'
 
-//import UserRoutes from './UserRoutes'                       
+import PageRoutes from './PageRoutes'                       
 
 const routeConfig = [
-  UserRoutes
+  PageRoutes
 ]
 
 export const AppRouter = <Router
@@ -18,14 +18,17 @@ class Routes {
     // Try to login the user before loading anything else. This is useful
     // for the case where someone already logged in and refreshes the page or
     // opens another tab.                                   
-    getSession()
+    //getSession()
   } 
 
   run(content) {
-    return getSession()
-      .then(() => {
-        return render(AppRouter, content)
-      })
+    console.log('tset')
+    return render(AppRouter, content)
+    //return getSession()
+      //.then(() => {
+        //console.log('tset')
+        //return render(AppRouter, content)
+      //})
   }
 }
 
