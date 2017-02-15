@@ -8,6 +8,7 @@ module.exports = {
     'webpack/hot/only-dev-server',
     './app.js',
   ],
+
   output: {
     filename: 'bundle.js',
     path: resolve(__dirname, 'dist'),
@@ -22,6 +23,13 @@ module.exports = {
     hot: true,
     contentBase: resolve(__dirname, 'dist'),
     publicPath: '/',
+    proxy: {
+      '/api/**': {
+        target: 'http://localhost:8000',
+        secure: false,
+        changeOrigin: true,
+      }
+    },
   },
 
   module: {
@@ -46,6 +54,6 @@ module.exports = {
 
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NamedModulesPlugin(),
+    new webpack.NamedModulesPlugin()
   ],
 };
