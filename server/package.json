@@ -27,6 +27,7 @@
     "hapi-auth-cookie": "^6.1.1"
   },
   "devDependencies": {
-    "babel-cli": "^6.22.2"
+    "babel-cli": "^6.22.2",
+    "hapi-cors-headers": "^1.0.0"
   }
 }

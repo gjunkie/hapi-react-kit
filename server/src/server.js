@@ -6,16 +6,10 @@ const Hapi = require('hapi');
 const server = new Hapi.Server();
 
 server.connection({ 
-    host: 'localhost', 
-    port: 8000 
-});
-
-// Add the route
-server.route({
-    method: 'GET',
-    path:'/', 
-    handler: function (request, reply) {
-        return reply('hello world');
+    host: 'test.dev',
+    port: 8000,
+    routes: {
+      cors: true
     }
 });
 

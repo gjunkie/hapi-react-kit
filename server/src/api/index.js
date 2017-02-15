@@ -4,7 +4,7 @@ exports.register = (plugin, options, next) => {
 
   plugin.route([
 		// list your api paths with their handlers here
-    { method: 'GET', path: '/api/path', config: handlers.example },
+    { method: 'GET', path: '/api/path', config: handlers.exampleEndpoint },
   ])
 
   let server = plugin.connections[0];                       
