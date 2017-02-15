@@ -6,9 +6,12 @@ import Home from '../components/Home'
 const PageRoutes = {                                       
   path: '/',
   component: App,
-  childRoutes: {
-    component: Home,
-  },
+  childRoutes: [
+    {
+      path: 'home',
+      component: Home
+    }
+  ]
 }
 
 export default PageRoutes

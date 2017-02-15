@@ -5,8 +5,13 @@ export default class App extends Component {
     console.log("mount")
   }
   render() {
+
     return (
-				<h1>HELLO THERE</h1>
+      <div>
+        <h1>Sample Page Title</h1>
+        <a href="/home">Home</a>
+        {this.props.children}
+      </div>
     )
   }
 }

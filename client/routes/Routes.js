@@ -1,16 +1,13 @@
 import React from 'react'
 //import { getSession } from '../actions/UserActions'
 import { render } from 'react-dom'
-import { Router } from 'react-router'
+import { Router, browserHistory } from 'react-router'
 
 import PageRoutes from './PageRoutes'
 
-const routeConfig = [
-  PageRoutes
-]
-
-export const AppRouter = <Router
-  routes={routeConfig} />
+export const AppRouter = () => (<Router
+  history={browserHistory}
+  routes={PageRoutes} />)
 
 class Routes {
   constructor() {
@@ -30,4 +27,4 @@ class Routes {
   }
 }
 
-export default new Routes()
+export default AppRouter
