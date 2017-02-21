@@ -22,14 +22,7 @@ module.exports = {
   devServer: {
     hot: true,
     contentBase: resolve(__dirname, 'dist'),
-    publicPath: '/',
-    proxy: {
-      '/api/**': {
-        target: 'http://localhost:8000',
-        secure: false,
-        changeOrigin: true,
-      }
-    },
+    publicPath: '/'
   },
 
   module: {

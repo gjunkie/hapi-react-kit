@@ -8,14 +8,31 @@ const server = new Hapi.Server();
 server.connection({ 
     host: 'localhost',
     port: 8000,
-});
-
-// Start the server
-server.start((err) => {
-
-    if (err) {
-        throw err;
+    routes: {
+      cors: {
+        origin: ['http://localhost:8080'],
+        headers: ["Accept", "Authorization", "Content-Type", "If-None-Match", "Accept-language"]
+      }
     }
-    console.log('Server running at:', server.info.uri);
 });
+
+
+server.register([
+
+  { register: require('./api/') },
+
+], (err) => {
+    if (err) {
+      throw err;
+    }
+
+    // Start the server
+    server.start((err) => {
+      if (err) {
+          throw err;
+      }
+      console.log('Server running at:', server.info.uri);
+    });
+  }
+);
 

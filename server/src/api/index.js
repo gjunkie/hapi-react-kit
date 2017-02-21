@@ -1,10 +1,19 @@
-const handlers = require('./handlers')
+const dataHandlers = require('./dataHandlers')
+const userHandlers = require('./userHandlers')
 
 exports.register = (plugin, options, next) => {
 
   plugin.route([
-		// list your api paths with their handlers here
-    { method: 'GET', path: '/api/path', config: handlers.exampleEndpoint },
+    // list your api paths with their handlers here.
+    // look at the ./handlers file to see a sample handler.
+
+    // sample GET handlers
+    { method: 'GET', path: '/api/mypath', config: dataHandlers.exampleGET },
+    //{ method: 'GET', path: '/api/anotherpath', config: dataHandlers.anotherOneHere },
+
+    // sample POST handlers
+    { method: 'POST', path: '/api/createUser', config: userHandlers.examplePOST },
+    //{ method: 'POST', path: '/api/updateProfile', config: userHandlers.updateProfile }
   ])
 
   let server = plugin.connections[0];                       
@@ -20,7 +29,7 @@ exports.register = (plugin, options, next) => {
     }, callback);                                               
   });
 
-	plugin.expose('post', (request, url, data, callback) => {
+  plugin.expose('post', (request, url, data, callback) => {
     server.inject({
       method: 'POST',
       url: url,
@@ -34,3 +43,8 @@ exports.register = (plugin, options, next) => {
 
   next();
 }
+
+exports.register.attributes = {
+  name: 'api'
+}
+
