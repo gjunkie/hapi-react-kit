@@ -21,7 +21,6 @@ class Routes {
     return render(AppRouter, content)
     //return getSession()
       //.then(() => {
-        //console.log('tset')
         //return render(AppRouter, content)
       //})
   }
