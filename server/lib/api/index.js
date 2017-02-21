@@ -1,14 +1,24 @@
-const handlers = require('./handlers');
+'use strict';
 
-exports.register = (plugin, options, next) => {
+var getHandlers = require('./getHandlers');
+var postHandlers = require('./postHandlers');
+
+exports.register = function (plugin, options, next) {
 
   plugin.route([
-  // list your api paths with their handlers here
-  { method: 'GET', path: '/api/path', config: handlers.example }]);
+  // list your api paths with their handlers here.
+  // look at the ./handlers file to see a sample handler.
 
-  let server = plugin.connections[0];
+  // sample GET handlers
+  { method: 'GET', path: '/api/exampleget', config: getHandlers.exampleGET },
+  //{ method: 'GET', path: '/api/anotherget', config: getHandlers.anotherOneHere },
 
-  plugin.expose('get', (request, url, callback) => {
+  // sample POST handlers
+  { method: 'POST', path: '/api/examplepost', config: postHandlers.examplePOST }]);
+
+  var server = plugin.connections[0];
+
+  plugin.expose('get', function (request, url, callback) {
     server.inject({
       method: 'GET',
       url: url,
@@ -19,7 +29,7 @@ exports.register = (plugin, options, next) => {
     }, callback);
   });
 
-  plugin.expose('post', (request, url, data, callback) => {
+  plugin.expose('post', function (request, url, data, callback) {
     server.inject({
       method: 'POST',
       url: url,
@@ -32,4 +42,8 @@ exports.register = (plugin, options, next) => {
   });
 
   next();
+};
+
+exports.register.attributes = {
+  name: 'api'
 };

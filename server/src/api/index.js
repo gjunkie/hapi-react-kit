@@ -1,5 +1,5 @@
-const dataHandlers = require('./dataHandlers')
-const userHandlers = require('./userHandlers')
+const getHandlers = require('./getHandlers')
+const postHandlers = require('./postHandlers')
 
 exports.register = (plugin, options, next) => {
 
@@ -8,12 +8,12 @@ exports.register = (plugin, options, next) => {
     // look at the ./handlers file to see a sample handler.
 
     // sample GET handlers
-    { method: 'GET', path: '/api/mypath', config: dataHandlers.exampleGET },
-    //{ method: 'GET', path: '/api/anotherpath', config: dataHandlers.anotherOneHere },
+    { method: 'GET', path: '/api/exampleget', config: getHandlers.exampleGET },
+    //{ method: 'GET', path: '/api/anotherget', config: getHandlers.anotherOneHere },
 
     // sample POST handlers
-    { method: 'POST', path: '/api/createUser', config: userHandlers.examplePOST },
-    //{ method: 'POST', path: '/api/updateProfile', config: userHandlers.updateProfile }
+    { method: 'POST', path: '/api/examplepost', config: postHandlers.examplePOST },
+    //{ method: 'POST', path: '/api/anotherpost', config: postHandlers.anotherOneHere }
   ])
 
   let server = plugin.connections[0];                       
