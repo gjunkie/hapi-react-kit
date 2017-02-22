@@ -1,6 +1,6 @@
-import App from '../components/app/App'
-import Get from '../components/get/Get'
-import Post from '../components/post/Post'
+import App from '../containers/app/App'
+import Get from '../containers/get-example/Get'
+import Post from '../containers/post-example/Post'
 
 //import { requireAuth } from './RoutingUtils'
 

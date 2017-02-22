@@ -3,13 +3,6 @@ import 'isomorphic-fetch';
 
 export default class Get extends Component {
 
-  constructor(props) {                                      
-    super(props)                                            
-
-    this.state = {}                                         
-    this.state.data = {}                                         
-  } 
-
   componentDidMount() {
     fetch('http://localhost:8000/api/examplepost', {
       method: 'POST',
@@ -26,8 +19,6 @@ export default class Get extends Component {
       // do something with jsonResponse
       console.log('The POST response from the server:')
       console.log(jsonResponse)
-
-      this.state.data = jsonResponse;
     }).catch((err) => {
       // console.log(err);
       // something went wrong: err
@@ -37,9 +28,8 @@ export default class Get extends Component {
   render() {
     return (
       <div>
-        <h1>Get Example</h1>
-        <h3>{this.state.data.firstName}: {this.state.data.lastname}</h3>
-        <h4>From file: {this.state.data.title}</h4>
+        <h2>POST Example</h2>
+        <p>Check your console for the GET response</p>
       </div>
     )
   }
