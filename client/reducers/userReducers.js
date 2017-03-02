@@ -1,10 +1,10 @@
-export default (state = [], action) => {
+export default (state = {}, action) => {
   switch (action.type){
     case 'ADD_USER':
-      return [
+      return {
         ...state,
-        Object.assign({}, action.user)
-      ]
+        user: Object.assign({}, action.user)
+    }
     default:
       return state;
   }
