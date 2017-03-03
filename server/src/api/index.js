@@ -1,19 +1,17 @@
-const getHandlers = require('./getHandlers')
-const postHandlers = require('./postHandlers')
+const getHandlers = require('./handlers/get')
+const postHandlers = require('./handlers/post')
 
 exports.register = (plugin, options, next) => {
 
   plugin.route([
-    // list your api paths with their handlers here.
-    // look at the ./handlers file to see a sample handler.
+    // list your api endpoints with their handlers here.
+    // look at ./handlers files to see sample handlers.
 
-    // sample GET handlers
+    // list your GET handlers
     { method: 'GET', path: '/api/exampleget', config: getHandlers.exampleGET },
-    //{ method: 'GET', path: '/api/anotherget', config: getHandlers.anotherOneHere },
 
-    // sample POST handlers
+    // list your POST handlers
     { method: 'POST', path: '/api/examplepost', config: postHandlers.examplePOST },
-    //{ method: 'POST', path: '/api/anotherpost', config: postHandlers.anotherOneHere }
   ])
 
   let server = plugin.connections[0];                       

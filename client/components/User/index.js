@@ -8,12 +8,14 @@ export default class User extends Component {
   render() {
     return (
       <div>
-        <h4>User Component</h4>
         <div>
-          <strong>Name</strong>: {this.props.user.name}
+          <strong>ID</strong>: {this.props.id}
         </div>
         <div>
-          <strong>Title</strong>: {this.props.user.title}
+          <strong>Name</strong>: {this.props.name}
+        </div>
+        <div>
+          <strong>Title</strong>: {this.props.title}
         </div>
       </div>
     )
