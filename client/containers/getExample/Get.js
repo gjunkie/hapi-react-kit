@@ -1,33 +1,13 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { getUser } from '../../actions/getUser'
+import { getUser } from '../../actions'
 import 'isomorphic-fetch';
 import User from '../../components/User';
 
 const { any, func } = PropTypes;
 
 class GetExample extends Component {
-  //constructor() {
-    //super();
-    //this.state = { user: {} }
-  //}
-
-  //componentDidMount() {
-    //fetch('http://localhost:8000/api/exampleget')
-    //.then((response) => {
-      //return response.json();
-    //})
-    //.then((jsonResponse) => {
-      //// do something with jsonResponse
-      //this.setState({ user: jsonResponse });
-    //}).catch((err) => {
-      //// console.log(err);
-      //// something went wrong: err
-    //});
-  //}
-
   render() {
-
     let allUsers = this.props.users.map((user) => {
        return <User name={user.name} title={user.title} />;
     })
@@ -57,7 +37,7 @@ const mapDispatchToProps = {
   // maybe consolidate actions into some sort
   // of api export to not get confused with
   // the naming here.
-  // addUser,
+  // getUser,
   getUser: getUser,
 };
 

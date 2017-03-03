@@ -1,6 +1,6 @@
 import App from '../containers/app/App'
-import GetContainer from '../containers/get-example/Get'
-import PostContainer from '../containers/post-example/Post'
+import GetContainer from '../containers/getExample/Get'
+import PostContainer from '../containers/postExample/Post'
 
 //import { requireAuth } from './RoutingUtils'
 
