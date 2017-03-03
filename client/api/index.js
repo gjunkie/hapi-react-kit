@@ -1,3 +1,5 @@
+import { polyfill } from 'es6-promise'
+polyfill()
 import axios from 'axios'
 
 export const sampleFetch = (id) => {
