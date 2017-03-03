@@ -1,7 +1,6 @@
 import assert from 'assert'
 import { expect } from 'chai'
 import nock from 'nock'
-import { Promise } from 'es6-promise'
 
 import { sampleFetch, samplePost } from '../client/api'
 
