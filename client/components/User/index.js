@@ -10,10 +10,10 @@ export default class User extends Component {
       <div>
         <h4>User Component</h4>
         <div>
-          <strong>Name</strong>: {this.props.user.name}
+          <strong>Name</strong>: {this.props.name}
         </div>
         <div>
-          <strong>Title</strong>: {this.props.user.title}
+          <strong>Title</strong>: {this.props.title}
         </div>
       </div>
     )

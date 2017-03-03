@@ -10,7 +10,7 @@ server.connection({
     port: 8000,
     routes: {
       cors: {
-        origin: ['http://localhost:8080'],
+        origin: ['http://localhost:8080', 'http://localhost:8081'],
         headers: ["Accept", "Authorization", "Content-Type", "If-None-Match", "Accept-language"]
       }
     }

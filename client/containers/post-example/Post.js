@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux';
-import { addUser } from '../../actions/userActions'
+import { addUser } from '../../actions/addUser'
+import User from '../../components/User'
 import 'isomorphic-fetch';
 
 const { any, func } = PropTypes;
@@ -30,23 +31,30 @@ class PostExample extends Component {
   //}
 
   render() {
+    let allUsers = this.props.users.map((user) => {
+       return <User name={user.name} title={user.title} />;
+    })
+
     return (
       <div>
         <h2>POST Example</h2>
         <p>Check your console for the GET response</p>
-        <button onClick={() => this.props.addUser({name: 'Freddie Carthy'})}>Add User</button>
+        <button onClick={() => this.props.addUser({id: 1, name: 'Freddie Carthy', title: 'boss'})}>Add User</button>
+        <button onClick={() => this.props.addUser({id: 2, name: 'Dude McGee', title: 'boss'})}>Add User</button>
+        <button onClick={() => this.props.addUser({id: 3, name: 'Surley Sue', title: 'boss'})}>Add User</button>
+        {allUsers}
       </div>
     )
   }
 }
 
 PostExample.propTypes = {
-  user: any,
+  users: any,
   addUser: func,
 };
 
 const mapStateToProps = state => ({
-  user: state.user || {},
+  users: state.users || [],
 });
 
 const mapDispatchToProps = {
