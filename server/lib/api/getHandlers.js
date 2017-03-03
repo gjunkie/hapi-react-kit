@@ -3,14 +3,22 @@
 exports.exampleGET = {
   handler: function handler(request, done) {
     //let User = request.server.plugins.db.User;
-    var sampleData = {
-      name: 'Jeremiah Johnson',
-      title: 'Badass',
-      from: 'file getHandlers.js'
-    };
+    var sampleUsers = [{
+        id: 1,
+        name: 'Jeremiah Johnson',
+        title: 'Badass'
+      },
+      {
+        id: 2,
+        name: 'Fluffy Buckets',
+        title: 'Painter'
+      }
+    ];
 
-    console.log("You hit the GET endpoint! It returned this:");
-    console.log(sampleData);
-    return done(null, sampleData);
+    var user = sampleUsers.find(request.payload);
+    console.log("found:")
+    console.log(user)
+
+    return done(null, user);
   }
 };

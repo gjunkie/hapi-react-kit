@@ -9,7 +9,7 @@ const { any, func } = PropTypes;
 class GetExample extends Component {
   render() {
     let allUsers = this.props.users.map((user) => {
-       return <User name={user.name} title={user.title} />;
+      return <User name={user.name} title={user.title} id={user.id} key={user.id} />;
     })
 
     return (

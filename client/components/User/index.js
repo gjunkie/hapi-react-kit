@@ -8,7 +8,9 @@ export default class User extends Component {
   render() {
     return (
       <div>
-        <h5>User Component</h5>
+        <div>
+          <strong>ID</strong>: {this.props.id}
+        </div>
         <div>
           <strong>Name</strong>: {this.props.name}
         </div>
