@@ -8,9 +8,9 @@ describe('Request', () => {
 
   it('should fetch a user', () => {
     let sampleUser = {
-        id: '1',
-        name: 'Freddie Carthy',
-        title: 'Engineer'
+      id: '1',
+      name: 'Freddie Carthy',
+      title: 'Engineer'
     }
 
     nock('http://localhost:8000/api')
@@ -19,6 +19,8 @@ describe('Request', () => {
       .reply(200, sampleUser)
 
     return sampleFetch(1).then(response => {
+      console.log(response)
+      console.log(sampleUser)
       expect(response.id).to.equal(sampleUser.id)
       expect(response.name).to.equal(sampleUser.name)
       expect(response.title).to.equal(sampleUser.title)
@@ -27,8 +29,8 @@ describe('Request', () => {
 
   it('should save a user', () => {
     let sampleUser = {
-        name: 'Taco Salad',
-        title: 'Chef'
+      name: 'Taco Salad',
+      title: 'Chef'
     }
 
     nock('http://localhost:8000/api')
