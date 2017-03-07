@@ -19,10 +19,12 @@ describe('Request', () => {
       .reply(200, sampleUser)
 
     sampleFetch(1).then(response => {
-      expect(response.id).to.equal(sampleUser.id)
-      expect(response.name).to.equal(sampleUser.name)
-      expect(response.title).to.equal(sampleUser.title)
-      done()
+      setTimeout(() => {
+        expect(response.id).to.equal(sampleUser.id)
+        expect(response.name).to.equal(sampleUser.name)
+        expect(response.title).to.equal(sampleUser.title)
+        done()
+      })
     })
   })
 
@@ -41,10 +43,12 @@ describe('Request', () => {
       })
 
     samplePost(sampleUser).then(response => {
-      expect(response.id).to.equal('2')
-      expect(response.name).to.equal(sampleUser.name)
-      expect(response.title).to.equal(sampleUser.title)
-      done()
+      setTimeout(() => {
+        expect(response.id).to.equal('2')
+        expect(response.name).to.equal(sampleUser.name)
+        expect(response.title).to.equal(sampleUser.title)
+        done()
+      })
     })
   })
 })
