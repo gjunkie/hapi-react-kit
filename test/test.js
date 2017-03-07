@@ -13,11 +13,10 @@ var samplePost = API.samplePost;
 describe('Request', function() {
 
   it('should fetch a user', function() {
-    this.timeout(3000)
     let sampleUser = {
       id: '1',
-      name: 'Freddie Carthy',
-      title: 'Engineer'
+      name: 'Master Shake',
+      title: 'Detective'
     }
 
     nock('http://localhost:8000/api')
@@ -26,9 +25,6 @@ describe('Request', function() {
       .reply(200, sampleUser)
 
     return sampleFetch(1).then(function(response) {
-      console.log('got response')
-      console.log(response)
-      //console.log(sampleUser)
       expect(response.id).to.equal(sampleUser.id)
       expect(response.name).to.equal(sampleUser.name)
       expect(response.title).to.equal(sampleUser.title)
