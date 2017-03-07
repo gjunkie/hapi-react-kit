@@ -1,12 +1,17 @@
-import assert from 'assert'
-import { expect } from 'chai'
-import nock from 'nock'
+var assert = require('assert');
+var expect = require('chai').expect;
+var nock = require('nock');
+var polyfill = require('es6-promise').polyfill;
+var API = require('../client/api');
+polyfill()
 
-import { sampleFetch, samplePost } from '../client/api'
+var sampleFetch = API.sampleFetch;
+var samplePost = API.samplePost;
 
-describe('Request', () => {
+describe('Request', function() {
 
-  it('should fetch a user', () => {
+  it('should fetch a user', function() {
+    this.timeout(3000)
     let sampleUser = {
       id: '1',
       name: 'Freddie Carthy',
@@ -18,7 +23,7 @@ describe('Request', () => {
       .query({id: 1})
       .reply(200, sampleUser)
 
-    return sampleFetch(1).then(response => {
+    return sampleFetch(1).then(function(response) {
       console.log(response)
       console.log(sampleUser)
       expect(response.id).to.equal(sampleUser.id)
@@ -27,7 +32,7 @@ describe('Request', () => {
     })
   })
 
-  it('should save a user', () => {
+  it('should save a user', function() {
     let sampleUser = {
       name: 'Taco Salad',
       title: 'Chef'
@@ -41,7 +46,7 @@ describe('Request', () => {
         title: 'Chef'
       })
 
-    return samplePost(sampleUser).then(response => {
+    return samplePost(sampleUser).then(function(response) {
       expect(response.id).to.equal('2')
       expect(response.name).to.equal(sampleUser.name)
       expect(response.title).to.equal(sampleUser.title)
