@@ -25,6 +25,7 @@
   "homepage": "https://github.com/gjunkie/hapi-react-kit#readme",
   "dependencies": {
     "axios": "^0.15.3",
+    "faker": "^4.1.0",
     "mocha": "^3.2.0",
     "object-assign": "^4.1.1",
     "react": "^15.4.2",

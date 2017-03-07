@@ -1,7 +1,8 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { saveUser } from '../../actions'
-import User from '../../components/User'
+import faker from 'faker';
+import { saveUser } from '../../actions';
+import User from '../../components/User';
 import 'isomorphic-fetch';
 
 const { any, func } = PropTypes;
@@ -10,15 +11,13 @@ class PostExample extends Component {
 
   render() {
     let userToAdd = {
-      id: 1,
-      name: 'Pickle Bottom',
-      title: 'Photographer'
-    }
+      id: faker.random.number(),
+      name: faker.name.findName(),
+      title: faker.name.jobTitle()
+    };
     let addedUser = this.props.users.map((user) => {
-      if(user.id === userToAdd.id) {
-        return <User name={user.name} title={user.title} id={user.id} key={user.id} />;
-      }
-    })
+      return <User name={user.name} title={user.title} id={user.id} />;
+    });
 
     return (
       <div>
