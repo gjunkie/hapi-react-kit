@@ -24,8 +24,9 @@ describe('Request', function() {
       .reply(200, sampleUser)
 
     return sampleFetch(1).then(function(response) {
+      console.log('got response')
       console.log(response)
-      console.log(sampleUser)
+      //console.log(sampleUser)
       expect(response.id).to.equal(sampleUser.id)
       expect(response.name).to.equal(sampleUser.name)
       expect(response.title).to.equal(sampleUser.title)
