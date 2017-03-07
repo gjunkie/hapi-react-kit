@@ -1,10 +1,12 @@
 var assert = require('assert');
 var expect = require('chai').expect;
 var nock = require('nock');
+
 var polyfill = require('es6-promise').polyfill;
-var API = require('../client/api');
+Object.assign = require('object-assign');
 polyfill()
 
+var API = require('../client/api');
 var sampleFetch = API.sampleFetch;
 var samplePost = API.samplePost;
 
