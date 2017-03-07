@@ -6,7 +6,7 @@ import { sampleFetch, samplePost } from '../client/api'
 
 describe('Request', () => {
 
-  it('should fetch a user', (done) => {
+  it('should fetch a user', () => {
     let sampleUser = {
         id: '1',
         name: 'Freddie Carthy',
@@ -18,17 +18,14 @@ describe('Request', () => {
       .query({id: 1})
       .reply(200, sampleUser)
 
-    sampleFetch(1).then(response => {
-      setTimeout(() => {
-        expect(response.id).to.equal(sampleUser.id)
-        expect(response.name).to.equal(sampleUser.name)
-        expect(response.title).to.equal(sampleUser.title)
-        done()
-      })
+    return sampleFetch(1).then(response => {
+      expect(response.id).to.equal(sampleUser.id)
+      expect(response.name).to.equal(sampleUser.name)
+      expect(response.title).to.equal(sampleUser.title)
     })
   })
 
-  it('should save a user', (done) => {
+  it('should save a user', () => {
     let sampleUser = {
         name: 'Taco Salad',
         title: 'Chef'
@@ -42,13 +39,10 @@ describe('Request', () => {
         title: 'Chef'
       })
 
-    samplePost(sampleUser).then(response => {
-      setTimeout(() => {
-        expect(response.id).to.equal('2')
-        expect(response.name).to.equal(sampleUser.name)
-        expect(response.title).to.equal(sampleUser.title)
-        done()
-      })
+    return samplePost(sampleUser).then(response => {
+      expect(response.id).to.equal('2')
+      expect(response.name).to.equal(sampleUser.name)
+      expect(response.title).to.equal(sampleUser.title)
     })
   })
 })
