@@ -23,11 +23,7 @@ This little project got started out of a need to have an up-to-date boilerplate 
 This boilerplate puts together the client and the server as a proof of concept. The two should be in separate repos and deployed separately.
 
 ## Tests
-def needs tests..
-
-## Contributors
-needs cont..
+There's some basic tests with mocha to get you started.
 
 ## License
-
 MIT (go nuts)

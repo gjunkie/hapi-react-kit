@@ -1,7 +1,9 @@
 import React, { Component, PropTypes } from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { connect } from 'react-redux';
-import { getUser } from '../../actions'
+import { getUser } from '../../actions';
 import 'isomorphic-fetch';
+import './styles.css';
 import User from '../../components/User';
 
 const { any, func } = PropTypes;
@@ -13,12 +15,18 @@ class GetExample extends Component {
     })
 
     return (
-      <div>
+      <div className="getExample">
         <h2>GET Example</h2>
-        <p>On this page we are making a GET request and setting the json response as the state. Then we pass the user data down to the User component.</p>
+        <p>Click on the Get User button to get a random user from the server. A new User comonent will be rendered with the user's information.</p>
         <button onClick={() => this.props.getUser(1)}>Get User</button>
 
+        <ReactCSSTransitionGroup
+        component="ul"
+        transitionName="example"
+        transitionEnterTimeout={500}
+        transitionLeaveTimeout={300}>
         {allUsers}
+        </ReactCSSTransitionGroup>
       </div>
     )
   }

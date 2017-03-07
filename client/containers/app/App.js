@@ -10,15 +10,12 @@ export default class App extends Component {
       <div>
         <header>
           <h1>Hapi-React-Kit</h1>
-          <ul>
+          <ul className="nav">
             <li><Link to={`/get-example/`}>GET Example</Link></li>
             <li><Link to={`/post-example/`}>POST Example</Link></li>
           </ul>
         </header>
         {this.props.children}
-        <footer>
-          Built by @gjunkie
-        </footer>
       </div>
     )
   }

@@ -7,7 +7,7 @@ export default class User extends Component {
 
   render() {
     return (
-      <div>
+      <li>
         <div>
           <strong>ID</strong>: {this.props.id}
         </div>
@@ -17,7 +17,7 @@ export default class User extends Component {
         <div>
           <strong>Title</strong>: {this.props.title}
         </div>
-      </div>
+      </li>
     )
   }
 }
