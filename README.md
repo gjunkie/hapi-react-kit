@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/gjunkie/hapi-react-kit.svg?branch=master)](https://travis-ci.org/gjunkie/hapi-react-kit)
+[![Build Status](https://travis-ci.org/gjunkie/hapi-react-kit.svg?branch=master)](https://travis-ci.org/gjunkie/hapi-react-kit) [![Known Vulnerabilities](https://snyk.io/test/github/gjunkie/hapi-react-kit/badge.svg)](https://snyk.io/test/github/gjunkie/hapi-react-kit) [![Known Vulnerabilities](https://david-dm.org/gjunkie/hapi-react-kit.svg)](https://david-dm.org/gjunkie/hapi-react-kit) [![Known Dev Vulnerabilities](https://david-dm.org/gjunkie/hapi-react-kit/dev-status.svg)](https://david-dm.org/gjunkie/hapi-react-kit?type=dev)
 
 ## hapi-react-kit
 A hapijs API and react-redux client boilerplate project.
@@ -19,7 +19,6 @@ I haven't set up a database here at all. For now, I'll leave that up to you. I u
 - `cd hapi-react-kit/server`
 - `npm install`
 - `npm start`
-- visit `http://localhost:8080`
 
 ## Deployment
 Since the client and the API in this project are in the same project, and each needs to run a server, I'd recommend using [Docker Compose](https://docs.docker.com/compose/) for deployment. Otherwise, it would pretty easy to split this repo in two and deploy them separately.
