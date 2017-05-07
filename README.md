@@ -11,7 +11,7 @@ I haven't set up a database here at all. For now, I'll leave that up to you. I u
 
 ## Installation
 
-- clone repo.
+- `git clone git@github.com:gjunkie/hapi-react-kit.git <project-name>`
 - `cd hapi-react-kit`
 - `npm install`
 - `npm start`
@@ -24,7 +24,8 @@ I haven't set up a database here at all. For now, I'll leave that up to you. I u
 Since the client and the API in this project are in the same project, and each needs to run a server, I'd recommend using [Docker Compose](https://docs.docker.com/compose/) for deployment. Otherwise, it would pretty easy to split this repo in two and deploy them separately.
 
 ## Tests
-There's some basic tests with mocha to get you started.
+- cd into the project.
+- `npm test`
 
 ## License
 MIT (go nuts)
