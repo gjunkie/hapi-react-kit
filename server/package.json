@@ -24,7 +24,7 @@
   "dependencies": {
     "bell": "^8.5.0",
     "faker": "^4.1.0",
-    "hapi": "^16.1.0",
+    "hapi": "^17.0.0",
     "hapi-auth-cookie": "^6.1.1"
   },
   "devDependencies": {
