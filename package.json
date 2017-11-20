@@ -23,7 +23,9 @@
     "url": "https://github.com/gjunkie/hapi-react-kit/issues"
   },
   "homepage": "https://github.com/gjunkie/hapi-react-kit#readme",
-  "dependencies": {},
+  "dependencies": {
+    "babel-core": "^6.26.0"
+  },
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.2",
