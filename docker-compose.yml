@@ -1,0 +1,30 @@
+version: '3'
+services:                                                   
+  proxy:
+    image: traefik
+    command: --web --docker --logLevel=INFO
+    ports:
+      - "80:80"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /dev/null:/traefik.toml
+
+  client:
+    build: ./client
+    ports:                                                  
+      - "8080"
+    volumes:                                                
+      - ./client:/app            
+    labels:
+      - "traefik.frontend.rule=PathPrefix:/"                           
+
+  server:
+    build: ./server                                         
+    ports:
+      - "8000"
+    volumes:                                                
+      - ./server:/app
+    labels:
+      - "traefik.frontend.rule=PathPrefix:/api"                
+    #links:
+      #- mongodb 

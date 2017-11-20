@@ -6,7 +6,7 @@
   "scripts": {
     "compile": "webpack",
     "compile:json": "webpack --profile --json",
-    "start": "node --max_old_space_size=8192 ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "start": "node --max_old_space_size=8192 ./node_modules/webpack-dev-server/bin/webpack-dev-server.js"
   },
   "repository": {
     "type": "git",

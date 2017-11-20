@@ -1,0 +1,30 @@
+{
+  "Services": {
+    "frontend": {
+      "Image": "node@sha256:af5c2c6ac8bc3fa372ac031ef60c45a285eeba7bce9ee9ed66dad3a01e29ab8d", 
+      "Networks": [], 
+      "Ports": [
+        {
+          "Port": 8080, 
+          "Protocol": "tcp"
+        }
+      ], 
+      "WorkingDir": "/app"
+    }, 
+    "server": {
+      "Env": [
+        "PORT=8000"
+      ], 
+      "Image": "node@sha256:af5c2c6ac8bc3fa372ac031ef60c45a285eeba7bce9ee9ed66dad3a01e29ab8d", 
+      "Networks": [], 
+      "Ports": [
+        {
+          "Port": 8000, 
+          "Protocol": "tcp"
+        }
+      ], 
+      "WorkingDir": "/app"
+    }
+  }, 
+  "Version": "0.1"
+}
