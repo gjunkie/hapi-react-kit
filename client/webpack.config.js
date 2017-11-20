@@ -15,7 +15,7 @@ module.exports = {
     publicPath: '/',
   },
 
-  context: resolve(__dirname, 'client'),
+  context: resolve(__dirname, './'),
 
   devtool: 'inline-source-map',
 

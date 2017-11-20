@@ -8,13 +8,13 @@ import { AppContainer } from 'react-hot-loader';
 import userReducer from './reducers/userReducers';
 import Routes from './routes/Routes';
 
+const middleware = applyMiddleware(thunk);
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
 export const store = createStore(
   userReducer,
-  compose(
-    applyMiddleware(thunk),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-  )
-)
+  composeEnhancers(middleware)
+);
 
 const render = (Component) => {
   ReactDOM.render(
