@@ -10,6 +10,9 @@ I'm a huge fan of [hapijs](https://hapijs.com/) and I've been learning a bit of 
 
 I haven't set up a database here at all. For now, I'll leave that up to you. I usually go with [MongoDB](https://www.mongodb.com/) for something like this as it's super easy to set up.
 
+## Requirements
+While the server and client-side of `hapi-react-kit` can run independently while in development, you will require [Docker](https://docker.com/) to deploy this so that both servers can run simultaneously.
+
 ## Installation
 
 - `git clone git@github.com:gjunkie/hapi-react-kit.git <project-name>`
@@ -20,15 +23,15 @@ I haven't set up a database here at all. For now, I'll leave that up to you. I u
 
 ## Running Your App
 
+### Using Docker Compose
+- `docker-compose up`
+
+### Running locally without Docker
 - `cd hapi-react-kit/client`
 - `npm start`
-- open second terminal window.
+- open new terminal tab.
 - `cd hapi-react-kit/server`
 - `npm start`
-
-## Deployment
-
-Since the client and the API in this project are in the same project, and each needs to run a server, I'd recommend using [Docker Compose](https://docs.docker.com/compose/) for deployment. Otherwise, it would pretty easy to split this repo in two and deploy them separately.
 
 ## Tests
 
