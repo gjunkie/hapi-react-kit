@@ -1,12 +1,12 @@
 {
   "name": "hapi-react-kit-client",
   "version": "0.0.1",
-  "description": "A simple starter kit for a hapijs and react app.",
+  "description": "A React client for hapi-react-kit.",
   "main": "server.js",
   "scripts": {
     "compile": "webpack",
     "compile:json": "webpack --profile --json",
-    "start": "node --max_old_space_size=8192 ./node_modules/webpack-dev-server/bin/webpack-dev-server.js"
+    "start": "node --max_old_space_size=8192 ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --host 0.0.0.0 --port 8080"
   },
   "repository": {
     "type": "git",

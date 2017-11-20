@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 export const sampleFetch = (id) => {
-  let example = axios.get('http://localhost:8000/api/exampleget', {
+  let example = axios.get('/api/exampleget', {
     params: {
       id: id
     }
@@ -17,7 +17,7 @@ export const sampleFetch = (id) => {
 }
 
 export const samplePost = (payload) => {
-  let example = axios.post('http://localhost:8000/api/examplepost', {
+  let example = axios.post('/api/examplepost', {
     id: payload.id,
     name: payload.name,
     title: payload.title
