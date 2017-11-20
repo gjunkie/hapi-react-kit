@@ -1,5 +1,5 @@
 {
-  "name": "hapi-react-kit",
+  "name": "hapi-react-kit-client",
   "version": "0.0.1",
   "description": "A simple starter kit for a hapijs and react app.",
   "main": "server.js",

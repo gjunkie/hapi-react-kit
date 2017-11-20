@@ -1,0 +1,35 @@
+{
+  "name": "hapi-react-kit",
+  "version": "0.0.1",
+  "description": "A simple starter kit for a hapijs and react app.",
+  "main": "server.js",
+  "scripts": {
+    "compile": "webpack",
+    "compile:json": "webpack --profile --json",
+    "start": "node --max_old_space_size=8192 ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "test": "./node_modules/mocha/bin/mocha --compilers js:babel-core/register"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/gjunkie/hapi-react-kit.git"
+  },
+  "keywords": [
+    "hapijs",
+    "react"
+  ],
+  "author": "Freddie Carthy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gjunkie/hapi-react-kit/issues"
+  },
+  "homepage": "https://github.com/gjunkie/hapi-react-kit#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-eslint": "^8.0.2",
+    "eslint": "^4.11.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.5.1"
+  }
+}
