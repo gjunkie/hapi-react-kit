@@ -3,6 +3,7 @@ services:
   proxy:
     image: traefik
     command: --web --docker --logLevel=INFO
+    restart: always
     ports:
       - "80:80"
     volumes:
@@ -11,6 +12,7 @@ services:
 
   client:
     build: ./client
+    restart: always
     ports:                                                  
       - "8080"
     volumes:                                                
@@ -20,11 +22,22 @@ services:
 
   server:
     build: ./server                                         
+    restart: always
     ports:
       - "8000"
     volumes:                                                
       - ./server:/app
     labels:
       - "traefik.frontend.rule=PathPrefix:/api"                
-    #links:
-      #- mongodb 
+    links:
+      - database 
+
+  database:
+    image: mongo:latest
+    restart: always
+    container_name: "mongodb"
+    volumes:
+      - ./data:/data/db
+    ports:
+      - 27017:27017
+    command: mongod --smallfiles --logpath=/dev/null # --quiet

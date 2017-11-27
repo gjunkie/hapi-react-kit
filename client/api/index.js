@@ -7,6 +7,7 @@ export const sampleFetch = (id) => {
     }
   })
   .then((response) => {
+    console.log(response.data)
     return response.data
   }).catch((err) => {
     // something went wrong: err
