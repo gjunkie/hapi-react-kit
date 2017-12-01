@@ -1,5 +1,11 @@
-const getUsers = require('./handlers/get');
+const getHandlers = require('./get');
+const postHandlers = require('./post');
 
 module.exports = {
-  users: getUsers,
+  get: {
+    user: getHandlers.user,
+  },
+  post: {
+    user: postHandlers.user,
+  },
 };

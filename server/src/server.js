@@ -12,40 +12,19 @@ const server = new Hapi.Server({
 });
 
 async function setupAndStart() {
-  await server.register({
-    plugin: require('./api/')
-  });
-
-  await server.register({
-    plugin: require('../db'),
-    options: {
-        url: process.env.MONGODB_URL || 'mongodb://database:27017/appcademy',
+  await server.register([
+    { plugin: require('./api/') },
+    {
+      plugin: require('../db'),
+      options: {
+          url: process.env.MONGODB_URL || 'mongodb://database:27017/appcademy',
+      }
     }
-  });
+  ]);
 
   await server.start().then(() => {
-    console.log('started');
+    console.log('api started');
   });
 };
 
-setupAndStart().then(() => {
-  console.log('done dude!')
-});
-
-//server.register({
-  //plugin: require('../db'),
-  //options: {
-    //url: process.env.MONGODB_URL || 'mongodb://0.0.0.0:27017/appcademy',
-  //}
-//}).then(() => {
-//})
-
-//server.register([
-  //{
-    //register: require('../db'),
-    //options: {
-      //url: process.env.MONGODB_URL || 'mongodb://0.0.0.0:27017/appcademy',
-    //}
-  //},
-  //{ register: require('./api/') },
-//]);
+setupAndStart();

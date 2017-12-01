@@ -1,13 +1,7 @@
+// Create all of your POST handlers in this folder, then import
+// and export them here.
+const user = require('./user');
 
-exports.examplePOST = { 
-  handler: (request, done) => {
-      console.log("You hit the POST endpoint! You sent this:");
-      console.log(request.payload);
-
-      // do something with the payload
-      let sampleData = request.payload;
-  
-      return done(null, sampleData);
-    }
+module.exports = {
+  user,
 };
-
