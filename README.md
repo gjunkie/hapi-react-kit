@@ -2,13 +2,11 @@
 
 ## hapi-react-kit
 
-A hapijs API and react-redux client boilerplate project.
+A hapijs API and React client boilerplate project.
 
 This project got started out of a need to have a boilerplate that didn't tie up the client and server-side logic. Most boilerplate projects coupled them pretty tightly and made replacing their respective frameworks pretty cumbersome.
 
-I'm a huge fan of [hapijs](https://hapijs.com/) and I've been learning a bit of [React](https://facebook.github.io/react/) lately, so I figured I'd start there. I've also set up [react-redux](https://github.com/reactjs/react-redux). Feel free to clone this and swap them out for your preferred frameworks.
-
-I haven't set up a database here at all. For now, I'll leave that up to you. I usually go with [MongoDB](https://www.mongodb.com/) for something like this as it's super easy to set up.
+I'm a huge fan of [hapijs](https://hapijs.com/) so that's what this project uses and it is Hapi.js v17.x.x ready. For the client-side this project uses [React](https://facebook.github.io/react/). I've also set up [react-redux](https://github.com/reactjs/react-redux). Feel free to clone this and swap them out for your preferred frameworks.
 
 ## Requirements
 While the server and client-side of `hapi-react-kit` can run independently while in development, you will require [Docker](https://docker.com/) to deploy this so that both servers can run simultaneously.
