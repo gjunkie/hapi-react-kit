@@ -7,48 +7,48 @@ Object.assign = require('object-assign');
 polyfill()
 
 var API = require('../client/api');
-var sampleFetch = API.sampleFetch;
+var sampleGet = API.sampleGet;
 var samplePost = API.samplePost;
 
 describe('Request', function() {
 
   it('should fetch a user', function() {
-    let sampleUser = {
+    const sampleUser = {
       id: '1',
       name: 'Master Shake',
-      title: 'Detective'
-    }
+      title: 'Detective',
+    };
 
-    nock('http://localhost:8000/api')
-      .get('/exampleget')
+    nock('http://localhost/api')
+      .get('/getuser')
       .query({id: 1})
-      .reply(200, sampleUser)
+      .reply(200, sampleUser);
 
-    return sampleFetch(1).then(function(response) {
-      expect(response.id).to.equal(sampleUser.id)
-      expect(response.name).to.equal(sampleUser.name)
-      expect(response.title).to.equal(sampleUser.title)
-    })
-  })
+    return sampleGet(1).then(function(response) {
+      expect(response.id).to.equal(sampleUser.id);
+      expect(response.name).to.equal(sampleUser.name);
+      expect(response.title).to.equal(sampleUser.title);
+    });
+  });
 
   it('should save a user', function() {
-    let sampleUser = {
+    const sampleUser = {
       name: 'Taco Salad',
       title: 'Chef'
-    }
+    };
 
-    nock('http://localhost:8000/api')
-      .post('/examplepost')
+    nock('http://localhost/api')
+      .post('/createuser')
       .reply(201, {
         id: '2',
         name: 'Taco Salad',
         title: 'Chef'
-      })
+      });
 
     return samplePost(sampleUser).then(function(response) {
-      expect(response.id).to.equal('2')
-      expect(response.name).to.equal(sampleUser.name)
-      expect(response.title).to.equal(sampleUser.title)
-    })
-  })
+      expect(response.id).to.equal('2');
+      expect(response.name).to.equal(sampleUser.name);
+      expect(response.title).to.equal(sampleUser.title);
+    });
+  });
 })

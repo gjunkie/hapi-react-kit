@@ -8,10 +8,10 @@ exports.plugin = {
       // look at ./get and ./post files to see sample handlers.
 
       // list your GET handlers
-      { method: 'GET', path: '/api/exampleget', options: { handler: handlers.get.user } },
+      { method: 'GET', path: '/api/getuser', options: { handler: handlers.get.user } },
 
       // list your POST handlers
-      { method: 'POST', path: '/api/examplepost', options: { handler: handlers.post.user } },
+      { method: 'POST', path: '/api/createuser', options: { handler: handlers.post.user } },
     ])
 
     //let server = plugin.connections[0];                       

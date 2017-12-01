@@ -1,16 +1,14 @@
 import axios from 'axios'
 
-export const sampleFetch = (id) => {
-  let example = axios.get('/api/exampleget', {
+export const sampleGet = (id) => {
+  let example = axios.get('/api/getuser', {
     params: {
       id: id
     }
   })
   .then((response) => {
-    console.log(response.data)
     return response.data
   }).catch((err) => {
-    // something went wrong: err
     console.log(err)
   })
 
@@ -18,7 +16,7 @@ export const sampleFetch = (id) => {
 }
 
 export const samplePost = (payload) => {
-  let example = axios.post('/api/examplepost', {
+  let example = axios.post('/api/createuser', {
     id: payload.id,
     name: payload.name,
     title: payload.title
@@ -26,7 +24,6 @@ export const samplePost = (payload) => {
   .then((response) => {
     return response.data
   }).catch((err) => {
-    // something went wrong: err
     console.log(err)
   })
 
