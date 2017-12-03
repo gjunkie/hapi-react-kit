@@ -10,36 +10,40 @@ import './styles.css';
 
 const { any, func } = PropTypes;
 
+const getNewUser = () => ({
+  id: faker.random.number(),
+  name: faker.name.findName(),
+  title: faker.name.jobTitle(),
+});
+
+const allUsers = users => (
+  users.map((user) => {
+    return <User key={user.id} name={user.name} title={user.title} id={user.id} />;
+  })
+);
+
 class PostExample extends Component {
-
   render() {
-    let userToAdd = {
-      id: faker.random.number(),
-      name: faker.name.findName(),
-      title: faker.name.jobTitle()
-    };
-    let addedUsers = this.props.users.map((user) => {
-      return <User name={user.name} title={user.title} id={user.id} />;
-    });
-
     return (
       <div className="postExample">
         <h2>POST Example</h2>
         <p>Click on the Add User button to generate a random user, send them to the server, and add the response to the React store.</p>
-        <button onClick={() => this.props.saveUser(userToAdd)}>Add User</button>
+        <button onClick={() => this.props.saveUser(getNewUser())}>
+          Add User
+        </button>
 
         <h4>Users Added:</h4>
         <ReactCSSTransitionGroup
-        component="ul"
-        transitionName="example"
-        transitionEnterTimeout={500}
-        transitionLeaveTimeout={300}>
-        {addedUsers}
+          component="ul"
+          transitionName="example"
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={300}>
+          { allUsers(this.props.users) }
         </ReactCSSTransitionGroup>
       </div>
-    )
-  }
-}
+    );
+  };
+};
 
 PostExample.propTypes = {
   users: any,

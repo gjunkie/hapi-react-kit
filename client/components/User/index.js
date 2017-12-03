@@ -17,6 +17,9 @@ export default class User extends Component {
         <div>
           <strong>Title</strong>: {this.props.title}
         </div>
+        <button onClick={() => this.props.deleteUser(this.props.id)}>
+          Delete User
+        </button>
       </li>
     )
   }

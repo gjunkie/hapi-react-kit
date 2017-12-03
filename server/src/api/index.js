@@ -1,20 +1,13 @@
-const handlers = require('./handlers')
-//const postHandlers = require('./handlers/post')
+// list your api endpoints with their handlers here.
+// look at ./handlers/get and ./handlers/post to see sample handlers.
+const requestHandlers = require('./handlers')
 
 exports.plugin = {
   register: (server, options) => {
     server.route([
-      // list your api endpoints with their handlers here.
-      // look at ./get and ./post files to see sample handlers.
-
-      // list your GET handlers
-      { method: 'GET', path: '/api/getuser', options: { handler: handlers.get.user } },
-
-      // list your POST handlers
-      { method: 'POST', path: '/api/createuser', options: { handler: handlers.post.user } },
+      { method: 'GET', path: '/api/getuser', options: { handler: requestHandlers.get.user } },
+      { method: 'POST', path: '/api/createuser', options: { handler: requestHandlers.post.user } },
     ])
-
-    //let server = plugin.connections[0];                       
 
     //server.expose('get', (request, url, callback) => {
       //server.inject({
