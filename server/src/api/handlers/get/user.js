@@ -3,6 +3,8 @@ var faker = require('faker');
 
 // Get a user
 module.exports = (request, h) => {
+  console.log("You hit the GET endpoint! You sent this:");
+  console.log(request.payload);
   let User = request.server.plugins.db.User;
   let sampleUser = {
     id: faker.random.number(),

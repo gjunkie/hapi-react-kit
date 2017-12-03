@@ -9,12 +9,14 @@ import User from '../../components/User';
 
 const { any, func } = PropTypes;
 
+const allUsers = users => (
+  users.map((user) => {
+    return <User key={user.id} name={user.name} title={user.title} id={user.id} />;
+  })
+);
+
 class GetExample extends Component {
   render() {
-    let allUsers = this.props.users.map((user) => {
-      return <User name={user.name} title={user.title} id={user.id} key={user.id} />;
-    })
-
     return (
       <div className="getExample">
         <h2>GET Example</h2>
@@ -26,7 +28,7 @@ class GetExample extends Component {
         transitionName="example"
         transitionEnterTimeout={500}
         transitionLeaveTimeout={300}>
-        {allUsers}
+        { allUsers(this.props.users) }
         </ReactCSSTransitionGroup>
       </div>
     )
