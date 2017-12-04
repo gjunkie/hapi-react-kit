@@ -6,6 +6,7 @@ exports.plugin = {
   register: (server, options) => {
     server.route([
       { method: 'GET', path: '/api/getuser', options: { handler: requestHandlers.get.user } },
+      { method: 'GET', path: '/api/getusers', options: { handler: requestHandlers.get.users } },
       { method: 'POST', path: '/api/createuser', options: { handler: requestHandlers.post.user } },
     ])
 

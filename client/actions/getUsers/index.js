@@ -1,17 +1,13 @@
 import axios from 'axios'
-import { loadUser } from '../loadUser';
+import { loadUsers } from '../loadUsers';
 
-export const saveUser = payload => dispatch => (
-  axios.post('/api/createuser', {
-    id: payload.id,
-    name: payload.name,
-    title: payload.title
-  })
+export const getUsers = options => dispatch => (
+  axios.get('/api/getusers')
   .then((response) => {
-    dispatch(loadUser(response));
+    dispatch(loadUsers(response.data));
   }).catch((err) => {
     console.log(err)
   })
 );
 
-export default saveUser;
+export default getUsers;

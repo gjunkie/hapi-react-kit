@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { connect } from 'react-redux';
 import faker from 'faker';
 import { saveUser } from '../../actions';
@@ -33,13 +32,7 @@ class PostExample extends Component {
         </button>
 
         <h4>Users Added:</h4>
-        <ReactCSSTransitionGroup
-          component="ul"
-          transitionName="example"
-          transitionEnterTimeout={500}
-          transitionLeaveTimeout={300}>
-          { allUsers(this.props.users) }
-        </ReactCSSTransitionGroup>
+        { allUsers(this.props.users) }
       </div>
     );
   };

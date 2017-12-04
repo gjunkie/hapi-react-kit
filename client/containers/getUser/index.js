@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { connect } from 'react-redux';
 import { getUser } from '../../actions';
+import { getUsers } from '../../actions';
 import 'isomorphic-fetch';
 import './styles.css';
 import User from '../../components/User';
@@ -10,12 +10,14 @@ import User from '../../components/User';
 const { any, func } = PropTypes;
 
 const allUsers = users => (
-  users.map((user) => {
-    return <User key={user.id} name={user.name} title={user.title} id={user.id} />;
-  })
+  users.map(user => <User key={user.id} name={user.name} title={user.title} id={user.id} />)
 );
 
 class GetExample extends Component {
+  componentDidMount() {
+    this.props.getUsers();
+  };
+
   render() {
     return (
       <div className="getExample">
@@ -23,17 +25,11 @@ class GetExample extends Component {
         <p>Click on the Get User button to get a random user from the server. A new User comonent will be rendered with the user's information.</p>
         <button onClick={() => this.props.getUser(1)}>Get User</button>
 
-        <ReactCSSTransitionGroup
-        component="ul"
-        transitionName="example"
-        transitionEnterTimeout={500}
-        transitionLeaveTimeout={300}>
         { allUsers(this.props.users) }
-        </ReactCSSTransitionGroup>
       </div>
     )
-  }
-}
+  };
+};
 
 GetExample.propTypes = {
   users: any,
@@ -50,8 +46,9 @@ const mapDispatchToProps = {
   // the naming here.
   // getUser,
   getUser: getUser,
+  getUsers: getUsers,
 };
 
 const GetContainer = connect(mapStateToProps, mapDispatchToProps)(GetExample);
-export default GetContainer
+export default GetContainer;
 
