@@ -16,9 +16,7 @@ const getNewUser = () => ({
 });
 
 const allUsers = users => (
-  users.map((user) => {
-    return <User key={user.id} name={user.name} title={user.title} id={user.id} />;
-  })
+  users.map(user => <li key={user.id}><User name={user.name} title={user.title} id={user.id} /></li>)
 );
 
 class PostExample extends Component {

@@ -5,6 +5,18 @@ export default (state = {}, action) => {
         ...state,
         users: (state.users || []).concat(action.user)
       }
+    case 'DELETE_USER':
+      console.log(action.user)
+      const users = Object.assign([], state.users);
+      const indexOfUserToDelete = state.findIndex(user => {
+        return user.id == action.user.id
+      })
+
+      users.splice(indexOfUserToDelete, 1);
+      return {
+        ...state,
+        users: (state.users || []).concat(users)
+      }
 
     case 'LOAD_USER':
       return {

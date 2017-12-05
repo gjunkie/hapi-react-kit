@@ -10,7 +10,7 @@ import User from '../../components/User';
 const { any, func } = PropTypes;
 
 const allUsers = users => (
-  users.map(user => <User key={user.id} name={user.name} title={user.title} id={user.id} />)
+  users.map(user => <li key={user.id}><User name={user.name} title={user.title} id={user.id} /></li>)
 );
 
 class GetExample extends Component {
