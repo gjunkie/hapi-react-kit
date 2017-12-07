@@ -4,3 +4,4 @@ export loadUsers from './loadUsers';
 export saveUser from './saveUser';
 export getUser from './getUser';
 export getUsers from './getUsers';
+export removeUser from './removeUser';

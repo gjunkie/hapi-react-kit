@@ -1,28 +1,22 @@
 import React, { Component } from 'react'                    
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { deleteUser } from '../../actions';
 
-const { number, string } = PropTypes;
+const { func, object } = PropTypes;
 
 const User = (props) => {
   return (
     <div>
       <div>
-        <strong>ID</strong>: {props.id}
+        <strong>ID</strong>: {props.user.id}
       </div>
       <div>
-        <strong>Name</strong>: {props.name}
+        <strong>Name</strong>: {props.user.name}
       </div>
       <div>
-        <strong>Title</strong>: {props.title}
+        <strong>Title</strong>: {props.user.title}
       </div>
       <button onClick={() => {
-        console.log('go away', props.id)
-        console.log(props)
-        console.log(deleteUser())
-        const then = deleteUser(props.id);
-        then();
+        props.onDelete(props.user.id);
       }}>
         Delete User
       </button>
@@ -31,10 +25,8 @@ const User = (props) => {
 }
 
 User.propTypes = {
-  id: number,
-  name: string,
-  title: string,
+  user: object,
+  onDelete: func,
 };
 
-const user = connect()(User);
-export default user;
+export default User;
