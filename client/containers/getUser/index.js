@@ -1,24 +1,18 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { deleteUser } from '../../actions';
-import { getUser } from '../../actions';
-import { getUsers } from '../../actions';
+
+import actions from '../../actions';
+import helpers from './helpers';
+
 import 'isomorphic-fetch';
 import './styles.css';
-import User from '../../components/User';
 
 const { any, func } = PropTypes;
 
-const allUsers = (users, onDelete) => (
-  users.map(user => (
-    <li key={user.id}><User user={user} onDelete={onDelete} /></li>)
-  )
-);
-
 class GetExample extends Component {
   componentDidMount() {
-    this.props.getUsers();
+    this.props.onGetUsers();
   };
 
   render() {
@@ -26,9 +20,9 @@ class GetExample extends Component {
       <div className="getExample">
         <h2>GET Example</h2>
         <p>Click on the Get User button to get a random user from the server. A new User comonent will be rendered with the user's information.</p>
-        <button onClick={() => this.props.getUser(1)}>Get User</button>
+        <button onClick={() => this.props.onGetUser(1)}>Get User</button>
 
-        { allUsers(this.props.users, this.props.deleteUser) }
+        { helpers.allUsers(this.props.users, this.props.onDeleteUser) }
       </div>
     )
   };
@@ -36,22 +30,23 @@ class GetExample extends Component {
 
 GetExample.propTypes = {
   users: any,
-  getUser: func,
 };
 
 const mapStateToProps = state => ({
   users: state.users || [],
 });
 
-const mapDispatchToProps = {
-  // maybe consolidate actions into some sort
-  // of api export to not get confused with
-  // the naming here.
-  // getUser,
-  deleteUser: deleteUser,
-  getUser: getUser,
-  getUsers: getUsers,
-};
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  onDeleteUser: (id) => {
+    dispatch(actions.deleteUser(id));
+  },
+  onGetUser: (id) => {
+    dispatch(actions.getUser(id));
+  },
+  onGetUsers: () => {
+    dispatch(actions.getUsers());
+  },
+});
 
 const GetContainer = connect(mapStateToProps, mapDispatchToProps)(GetExample);
 export default GetContainer;
