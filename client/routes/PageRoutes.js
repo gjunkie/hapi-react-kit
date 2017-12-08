@@ -1,6 +1,6 @@
 import App from '../containers/app/App';
-import GetContainer from '../containers/getUser';
-import PostContainer from '../containers/createUser';
+import ExampleContainer from '../containers/exampleContainer';
+//import AnotherContainer from '../containers/anotherExample';
 
 //import { requireAuth } from './RoutingUtils'
 
@@ -9,13 +9,13 @@ const PageRoutes = {
   component: App,
   childRoutes: [
     {
-      path: 'get-example',
-      component: GetContainer,
+      path: 'example',
+      component: ExampleContainer,
     },
-    {
-      path: 'post-example',
-      component: PostContainer,
-    }
+    //{
+      //path: 'another-example',
+      //component: AnotherContainer,
+    //}
   ]
 };
 

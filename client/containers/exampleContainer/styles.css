@@ -1,14 +1,14 @@
-.getExample {
+.exampleContainer {
   text-align: center;
 }
 
-.getExample ul {
+.exampleContainer ul {
   margin: 0 auto;
   overflow: hidden;
   width: 1000px;
 }
 
-.getExample li {
+.exampleContainer li {
   float: left;
   height: 90px;
   margin-bottom: 10px;

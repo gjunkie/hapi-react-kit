@@ -10,15 +10,15 @@ import './styles.css';
 
 const { any, func } = PropTypes;
 
-class GetExample extends Component {
+class Example extends Component {
   componentDidMount() {
     this.props.onGetUsers();
   };
 
   render() {
     return (
-      <div className="getExample">
-        <h2>GET Example</h2>
+      <div className="exampleContainer">
+        <h2>Example Container</h2>
         <p>Click on the Get User button to get a random user from the server. A new User comonent will be rendered with the user's information.</p>
         <div>
           <button onClick={() => this.props.onGetUser(1)}>Get User</button>
@@ -33,7 +33,7 @@ class GetExample extends Component {
   };
 };
 
-GetExample.propTypes = {
+Example.propTypes = {
   users: any,
 };
 
@@ -56,6 +56,6 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   },
 });
 
-const GetContainer = connect(mapStateToProps, mapDispatchToProps)(GetExample);
-export default GetContainer;
+const ExampleContainer = connect(mapStateToProps, mapDispatchToProps)(Example);
+export default ExampleContainer;
 

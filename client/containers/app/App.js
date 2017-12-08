@@ -11,8 +11,7 @@ export default class App extends Component {
         <header>
           <h1>Hapi-React-Kit</h1>
           <ul className="nav">
-            <li><Link to={`/get-example/`}>GET Example</Link></li>
-            <li><Link to={`/post-example/`}>POST Example</Link></li>
+            <li><Link to={`/example/`}>Example Route</Link></li>
           </ul>
         </header>
         {this.props.children}
