@@ -1,26 +1,32 @@
 import React, { Component } from 'react'                    
+import PropTypes from 'prop-types';
 
-export default class User extends Component {
-  constructor(props) {
-    super(props);
-  }
+const { func, object } = PropTypes;
 
-  render() {
-    return (
-      <li>
-        <div>
-          <strong>ID</strong>: {this.props.id}
-        </div>
-        <div>
-          <strong>Name</strong>: {this.props.name}
-        </div>
-        <div>
-          <strong>Title</strong>: {this.props.title}
-        </div>
-        <button onClick={() => this.props.deleteUser(this.props.id)}>
-          Delete User
-        </button>
-      </li>
-    )
-  }
+const User = (props) => {
+  return (
+    <div>
+      <div>
+        <strong>ID</strong>: {props.user.id}
+      </div>
+      <div>
+        <strong>Name</strong>: {props.user.name}
+      </div>
+      <div>
+        <strong>Title</strong>: {props.user.title}
+      </div>
+      <button onClick={() => {
+        props.onDelete(props.user.id);
+      }}>
+        Delete User
+      </button>
+    </div>
+  )
 }
+
+User.propTypes = {
+  user: object,
+  onDelete: func,
+};
+
+export default User;

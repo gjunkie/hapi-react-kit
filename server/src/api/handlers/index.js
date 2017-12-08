@@ -1,3 +1,4 @@
+const deleteHandlers = require('./delete');
 const getHandlers = require('./get');
 const postHandlers = require('./post');
 
@@ -8,5 +9,8 @@ module.exports = {
   },
   post: {
     user: postHandlers.user,
+  },
+  delete: {
+    user: deleteHandlers.user,
   },
 };

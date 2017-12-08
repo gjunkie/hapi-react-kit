@@ -23,7 +23,7 @@ async function setupAndStart() {
   ]);
 
   await server.start().then(() => {
-    console.log('api started');
+    console.log('API server started!');
   });
 };
 

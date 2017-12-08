@@ -8,6 +8,7 @@ exports.plugin = {
       { method: 'GET', path: '/api/getuser', options: { handler: requestHandlers.get.user } },
       { method: 'GET', path: '/api/getusers', options: { handler: requestHandlers.get.users } },
       { method: 'POST', path: '/api/createuser', options: { handler: requestHandlers.post.user } },
+      { method: 'DELETE', path: '/api/deleteuser/{id}', options: { handler: requestHandlers.delete.user } },
     ])
 
     //server.expose('get', (request, url, callback) => {
@@ -33,6 +34,6 @@ exports.plugin = {
       //}, callback);
     //});
   },
-  name: 'api'
+  name: 'api',
 };
 

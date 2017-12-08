@@ -5,6 +5,11 @@ export default (state = {}, action) => {
         ...state,
         users: (state.users || []).concat(action.user)
       }
+    case 'REMOVE_USER':
+      return {
+        ...state,
+        users: state.users.filter(user => user.id !== action.id), 
+      }
 
     case 'LOAD_USER':
       return {
