@@ -20,9 +20,14 @@ class GetExample extends Component {
       <div className="getExample">
         <h2>GET Example</h2>
         <p>Click on the Get User button to get a random user from the server. A new User comonent will be rendered with the user's information.</p>
-        <button onClick={() => this.props.onGetUser(1)}>Get User</button>
+        <div>
+          <button onClick={() => this.props.onGetUser(1)}>Get User</button>
+          <button onClick={() => this.props.onCreateUser(helpers.getNewUser())}>Create User</button>
+        </div>
 
-        { helpers.allUsers(this.props.users, this.props.onDeleteUser) }
+        <ul>
+          { helpers.allUsers(this.props.users, this.props.onDeleteUser) }
+        </ul>
       </div>
     )
   };
@@ -37,6 +42,9 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
+  onCreateUser: (userData) => {
+    dispatch(actions.saveUser(userData));
+  },
   onDeleteUser: (id) => {
     dispatch(actions.deleteUser(id));
   },

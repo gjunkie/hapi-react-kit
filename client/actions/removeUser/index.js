@@ -1,6 +1,6 @@
-export const removeUser = (user) => {
+export const removeUser = (id) => {
   return {
     type: 'REMOVE_USER',
-    user: user
+    id: id
   }
 }
