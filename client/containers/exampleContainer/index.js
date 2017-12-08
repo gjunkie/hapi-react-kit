@@ -19,10 +19,10 @@ class Example extends Component {
     return (
       <div className="exampleContainer">
         <h2>Example Container</h2>
-        <p>Click on the Get User button to get a random user from the server. A new User comonent will be rendered with the user's information.</p>
+        <p>Click below to create a new user. As you create users they will be saved to the MongoDB database and shown below.</p>
         <div>
-          <button onClick={() => this.props.onGetUser(1)}>Get User</button>
           <button onClick={() => this.props.onCreateUser(helpers.getNewUser())}>Create User</button>
+          <button onClick={() => this.props.onGetUser(123)}>Get User</button>
         </div>
 
         <ul>
