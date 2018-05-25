@@ -6,7 +6,7 @@ const renderUser = (user, onDelete) => (
   <li key={user.id}><User user={user} onDelete={onDelete} /></li>
 );
 
-export const getNewUser = ({
+export const getNewUser = () => ({
   id: faker.random.number(),
   name: faker.name.findName(),
   title: faker.name.jobTitle(),
