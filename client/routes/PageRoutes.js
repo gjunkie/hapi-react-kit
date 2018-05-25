@@ -1,5 +1,5 @@
 import App from '../containers/app/App';
-import ExampleContainer from '../containers/exampleContainer';
+import ConnectedContainer from '../containers/exampleContainer';
 //import AnotherContainer from '../containers/anotherExample';
 
 //import { requireAuth } from './RoutingUtils'
@@ -10,7 +10,7 @@ const PageRoutes = {
   childRoutes: [
     {
       path: 'example',
-      component: ExampleContainer,
+      component: ConnectedContainer,
     },
     //{
       //path: 'another-example',

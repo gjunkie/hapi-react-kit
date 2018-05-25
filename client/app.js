@@ -5,14 +5,14 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { AppContainer } from 'react-hot-loader';
 
-import userReducer from './reducers/userReducers';
+import reducers from './reducers';
 import Routes from './routes/Routes';
 
 const middleware = applyMiddleware(thunk);
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 export const store = createStore(
-  userReducer,
+  reducers,
   composeEnhancers(middleware)
 );
 

@@ -20,7 +20,7 @@ export default (state = {}, action) => {
     case 'LOAD_USERS':
       return {
         ...state,
-        users: (state.users || []).concat(action.users)
+        users: action.users
       }
 
     default:

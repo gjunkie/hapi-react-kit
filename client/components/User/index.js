@@ -1,7 +1,5 @@
 import React, { Component } from 'react'                    
-import PropTypes from 'prop-types';
-
-const { func, object } = PropTypes;
+import { func, object } from 'prop-types';
 
 const User = (props) => {
   return (
