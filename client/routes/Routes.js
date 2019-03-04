@@ -1,9 +1,12 @@
 import React from 'react'
 //import { getSession } from '../actions/UserActions'
 import { render } from 'react-dom'
-import { Router, browserHistory } from 'react-router'
+import { Router } from 'react-router'
+import { createBrowserHistory } from 'history';
 
 import PageRoutes from './PageRoutes'
+
+const browserHistory = createBrowserHistory();
 
 export const AppRouter = () => (<Router
   history={browserHistory}

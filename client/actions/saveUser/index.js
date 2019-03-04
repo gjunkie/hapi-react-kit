@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { loadUser } from '../loadUser';
+import loadUser from '../loadUser';
 
 export const saveUser = payload => dispatch => {
   axios.post('/api/createuser', {

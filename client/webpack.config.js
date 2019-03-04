@@ -40,9 +40,6 @@ module.exports = {
           'style-loader',
           {
             loader: 'css-loader?modules',
-            options: {
-              minimize: false
-            }
           }
         ],
       },

@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { loadUsers } from '../loadUsers';
+import loadUsers from '../loadUsers';
 
 export const getUsers = options => dispatch => (
   axios.get('/api/getusers')
