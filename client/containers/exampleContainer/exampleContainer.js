@@ -12,23 +12,20 @@ import './styles.css';
 class ExampleContainer extends Component {
   constructor(props) {
     super(props);
-    this.createUser = this.createUser.bind(this);
-    this.getAllUsers = this.getAllUsers.bind(this);
-    this.getUser = this.getUser.bind(this);
   };
 
-  createUser() {
+  createUser = () => {
     this.props.onCreateUser(getNewUser());
   };
 
-  getAllUsers() {
+  getAllUsers = () => {
     this.props.onGetUsers();
   };
 
-  getUser(id) {
-    // you can pass an id here to get a specific user
+  getUser = (id) => {
     const firstUser = this.props.users[0];
     if (firstUser) {
+      // you can pass an id here to get a specific user
       this.props.onGetUser(firstUser.id);
     }
   };
