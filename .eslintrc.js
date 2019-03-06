@@ -5,4 +5,5 @@ eodule.exports = {
     "jsx-a11y",                                       
     "import"                                          
   ],
+  "parser": "babel-eslint",
 };
