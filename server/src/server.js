@@ -14,6 +14,7 @@ const server = new Hapi.Server({
 async function setupAndStart() {
   await server.register([
     { plugin: require('./api/') },
+    { plugin: require('./www/') },
     {
       plugin: require('../db'),
       options: {
